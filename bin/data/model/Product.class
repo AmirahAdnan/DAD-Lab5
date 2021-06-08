@@ -1,0 +1,11 @@
+Êþº¾   8 /  data/model/Product  java/lang/Object  java/io/Serializable serialVersionUID J 
+ConstantValue        	productId I name Ljava/lang/String; price F <init> ()V Code
+     LineNumberTable LocalVariableTable this Ldata/model/Product; setProductId (I)V	    
+ getProductId ()I setName (Ljava/lang/String;)V	  $   getName ()Ljava/lang/String; setPrice (F)V	  *   getPrice ()F 
+SourceFile Product.java !          	    
+   
+                     /     *· ±                               >     *µ ±       
+                       
+          /     *´ ¬                         ! "     >     *+µ #±       
+                          % &     /     *´ #°                         ' (     >     *#µ )±       
+       !                    + ,     /     *´ )®           $              -    .
