@@ -1,0 +1,41 @@
+Êþº¾   8 ²  $console/objects/client/ClientSideApp  java/lang/Object <init> ()V Code
+  	   LineNumberTable LocalVariableTable this &Lconsole/objects/client/ClientSideApp; main ([Ljava/lang/String;)V	    java/lang/System   out Ljava/io/PrintStream;  9ClientSideApp: Demo to process a list of objects on TCP 
+
+    java/io/PrintStream   println (Ljava/lang/String;)V  data/model/Product
+  	 " Programming Lab 1
+  $ %  setName ' Multimedia Studio ) Research Lab + java/util/ArrayList
+ * 	 . 0 / java/util/List 1 2 add (Ljava/lang/Object;)Z
+ 4 6 5 java/net/InetAddress 7 8 getLocalHost ()Ljava/net/InetAddress; : java/net/Socket
+ 9 <  = (Ljava/net/InetAddress;I)V ? java/io/ObjectOutputStream
+ 9 A B C getOutputStream ()Ljava/io/OutputStream;
+ > E  F (Ljava/io/OutputStream;)V H java/lang/StringBuilder J Send object to server: 
+ G L  
+ G N O P append -(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+ G R S T toString ()Ljava/lang/String;
+ > V W X writeObject (Ljava/lang/Object;)V
+ > Z [  flush ] java/io/ObjectInputStream
+ 9 _ ` a getInputStream ()Ljava/io/InputStream;
+ \ c  d (Ljava/io/InputStream;)V
+ \ f g h 
+readObject ()Ljava/lang/Object; . j k l iterator ()Ljava/util/Iterator; n p o java/util/Iterator q h next s Id for 
+  u v T getName
+ G x O y -(Ljava/lang/String;)Ljava/lang/StringBuilder; {  is 
+  } ~  getProductId ()I
+ G  O ‚ (I)Ljava/lang/StringBuilder; n „ … † hasNext ()Z
+ > ˆ ‰  close
+ \ ˆ
+ 9 ˆ
+   Ž java/lang/Exception   printStackTrace ’ $
+ClientSideApp: End of application.
+ ” java/io/IOException –  java/lang/ClassNotFoundException args [Ljava/lang/String; product1 Ldata/model/Product; product2 product3 products Ljava/util/List; portNo I 
+serverAddress Ljava/net/InetAddress; socket Ljava/net/Socket; outputStream Ljava/io/ObjectOutputStream; inputStream Ljava/io/ObjectInputStream; product e Ljava/lang/Exception; LocalVariableTypeTable &Ljava/util/List<Ldata/model/Product;>; 
+StackMapTable ˜ 
+SourceFile ClientSideApp.java !               /     *· ±    
+                 
+   	      ™    !² ¶ » Y·  L+!¶ #» Y·  M,&¶ #» Y·  N-(¶ #» *Y· ,:-¹ - W+¹ - W,¹ - W„6¸ 3:» 9Y· ;:» >Y¶ @· D:² » GYI· K¶ M¶ Q¶ ¶ U¶ Y» \Y¶ ^· b:		¶ eÀ *:¹ i :§ 6¹ m À :
+² » GYr· K
+¶ t¶ wz¶ w
+¶ |¶ €¶ Q¶ ¹ ƒ šÿÆ¶ ‡	¶ Š¶ ‹§ 
+:¶ Œ² ‘¶ ±  V “ V •  
+   z             $  ,  2 ! ; " D # M $ V ) [ * ` - m 0 { 3 ’ 4 ™ 5 ž 8 ¬ ; ¶ < Î = õ < ÿ @ A	 B D F I  K    z   ! — ˜    ™ š   › š  , õ œ š  ; æ  ž  [ ³ Ÿ    ` ® ¡ ¢  m ¡ £ ¤  { “ ¥ ¦  ¬ b § ¨ 	 Î ' © š 
+  ª «  ¬     ; æ  ­  ®   D ÿ Â  ¯    . 4 9 > \  n  2ÿ   ¯    .    °    ±
