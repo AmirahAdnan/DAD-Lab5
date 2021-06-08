@@ -1,0 +1,35 @@
+Êþº¾   8 ‘  console/client/ClientSideApp  java/lang/Object <init> ()V Code
+  	   LineNumberTable LocalVariableTable this Lconsole/client/ClientSideApp; main ([Ljava/lang/String;)V	    java/lang/System   out Ljava/io/PrintStream;  %ClientSideApp: Demo of Object Stream
+
+    java/io/PrintStream   println (Ljava/lang/String;)V  data/model/Product
+  	 " Programming Lab 1
+  $ %  setName
+ ' ) ( java/net/InetAddress * + getLocalHost ()Ljava/net/InetAddress; - java/net/Socket
+ , /  0 (Ljava/net/InetAddress;I)V 2 java/io/ObjectOutputStream
+ , 4 5 6 getOutputStream ()Ljava/io/OutputStream;
+ 1 8  9 (Ljava/io/OutputStream;)V ; java/lang/StringBuilder = Send object to server: 
+ : ?  
+ : A B C append -(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+ : E F G toString ()Ljava/lang/String;
+ 1 I J K writeObject (Ljava/lang/Object;)V
+ 1 M N  flush P java/io/ObjectInputStream
+ , R S T getInputStream ()Ljava/io/InputStream;
+ O V  W (Ljava/io/InputStream;)V
+ O Y Z [ 
+readObject ()Ljava/lang/Object; ] Id for 
+  _ ` G getName
+ : b B c -(Ljava/lang/String;)Ljava/lang/StringBuilder; e  is 
+  g h i getProductId ()I
+ : k B l (I)Ljava/lang/StringBuilder;
+ 1 n o  close
+ O n
+ , n
+ s u t java/lang/Exception v  printStackTrace x $
+ClientSideApp: End of application.
+ z java/io/IOException |  java/lang/ClassNotFoundException args [Ljava/lang/String; product Ldata/model/Product; portNo I 
+serverAddress Ljava/net/InetAddress; socket Ljava/net/Socket; outputStream Ljava/io/ObjectOutputStream; inputStream Ljava/io/ObjectInputStream; e Ljava/lang/Exception; 
+StackMapTable ~ 
+SourceFile ClientSideApp.java !               /     *· ±    
+                 
+   	      ™     ´² ¶ » Y·  L+!¶ #„=¸ &N» ,Y-· .:» 1Y¶ 3· 7:² » :Y<· >+¶ @¶ D¶ +¶ H¶ L» OY¶ Q· U:¶ XÀ L² » :Y\· >+¶ ^¶ ad¶ a+¶ f¶ j¶ D¶ ¶ m¶ p¶ q§ M,¶ r² w¶ ±   £ ¦ y  £ ¦ {  
+   R    !  $  %  *  +  . ) 1 7 4 M 5 S 6 X 9 f < o = ” @ ™ A ž B £ D § F « I ³ J    R    ´ } ~    ¤  €   ‰  ‚   … ƒ „  ) z … †  7 l ‡ ˆ  f = ‰ Š  §  ‹ Œ      ÿ ¦  Ž   s      
