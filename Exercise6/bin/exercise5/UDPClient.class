@@ -1,0 +1,29 @@
+Êþº¾   8 w  exercise5/UDPClient  java/lang/Object <init> ()V Code
+  	   LineNumberTable LocalVariableTable this Lexercise5/UDPClient; main ([Ljava/lang/String;)V	    java/lang/System   out Ljava/io/PrintStream;  1----------------UDP Client Side------------------
+    java/io/PrintStream   println (Ljava/lang/String;)V  java/net/DatagramSocket
+  	
+ " $ # java/net/InetAddress % & getLocalHost ()Ljava/net/InetAddress; ( 0Distributed Application Development is the best!
+ * , + java/lang/String - . getBytes ()[B 0 java/net/DatagramPacket
+ / 2  3 ([BILjava/net/InetAddress;I)V 5 java/lang/StringBuilder 7 
+
+Sending '
+ 4 9  
+ 4 ; < = append -(Ljava/lang/String;)Ljava/lang/StringBuilder; ? ' to the server.
+
+ 4 A B C toString ()Ljava/lang/String;
+  E F G send (Ljava/net/DatagramPacket;)V
+ / I  J ([BI)V
+  L M G receive
+ / O P . getData
+ * R  S ([B)V U "Number of words in the sentence : 
+  W X  print
+  Z [  close
+ ] _ ^ java/io/IOException `  printStackTrace args [Ljava/lang/String; datagramSocket Ljava/net/DatagramSocket; ip Ljava/net/InetAddress; portNo I text Ljava/lang/String; buf [B 	outPacket Ljava/net/DatagramPacket; 
+receiveBuf inputPacket 	textCount e Ljava/io/IOException; 
+StackMapTable 
+SourceFile UDPClient.java !               /     *· ±    
+       	          
+   	      ‹  
+   ¢² ¶ » Y·  L¸ !M„>':¶ ):» /Y¾,· 1:² » 4Y6· 8¶ :>¶ :¶ @¶ +¶ Dè¼:» /Y¾· H:+¶ K» *Y¶ N· Q:	² » 4YT· 8	¶ :¶ @¶ V+¶ Y§ L+¶ \±   ™ œ ]  
+   J    
+           #  3 " O # U & \ ' j * p - ~ / • 1 ™ 3  5 ¡ 7    p    ¢ a b    ‰ c d   … e f    g h   } i j  # v k l  3 f m n  \ = o l  j / p n  ~  q j 	   r s  t   	 ÷ œ ]  u    v
